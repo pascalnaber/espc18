@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gamingwebapp-ingress
+  namespace: ingressdemo
+  annotations:        
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: gaming.espc18.cf
+    http:
+      paths:
+      - backend:
+          serviceName: gamingwebapp-service
+          servicePort: 80
